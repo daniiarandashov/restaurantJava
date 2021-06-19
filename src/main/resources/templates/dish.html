@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блюда</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5">
+    <h1>Блюда</h1>
+    <div th:each = "el : ${dishes}" class="alert alert-info mt-2">
+        <h3 th:text = "${el.dish_name}"/>
+        <p th:text = "${el.isVegeterian}"/>
+        Калорийность: <p  th:text = "${el.calories}"/>
+        Цена: <p  th:text = "${el.price}"/>
+    </div>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+
+
+
+</body>
+</html>
